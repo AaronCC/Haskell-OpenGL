@@ -1,0 +1,156 @@
+
+==================== FINAL INTERFACE ====================
+2017-11-29 15:42:26.277185 UTC
+
+interface main@main:Main 8002
+  interface hash: e49f75432cbea818865244004b7fb993
+  ABI hash: 7dac989175918b60810ff24e0776ab57
+  export-list hash: e3b89aa366de6a1166a6325b79d366cd
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 0cd4400c5901eb8e391e4a44d55987ce
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.main
+module dependencies:
+package dependencies: GLURaw-2.0.0.3@GLURaw-2.0.0.3-Dsh0J6RJGCYIX4KzhPpy5R
+                      GLUT-2.7.0.12@GLUT-2.7.0.12-DC8hzFoSREsLOe0a29m1po
+                      ObjectName-1.1.0.1@ObjectName-1.1.0.1-EiFOWjUQWWuLyOhtrmuIWX
+                      OpenGL-3.0.2.0@OpenGL-3.0.2.0-6fbDRkN7rpfG63nVz30IBa
+                      OpenGLRaw-3.2.5.0@OpenGLRaw-3.2.5.0-8JxKpZbO2kWCx46iLc1G4X
+                      StateVar-1.1.0.4@StateVar-1.1.0.4-5dJbnTVECtEAhfJXPZKdbO
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bmp-1.2.6.3@bmp-1.2.6.3-43OLkH0uuwm831pBFpx2PZ
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      fixed-0.2.1.1@fixed-0.2.1.1-8Jr82l0kss5Gr4nEevmXlZ ghc-prim-0.5.0.0
+                      gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi
+                      gloss-rendering-1.11.1.1@gloss-rendering-1.11.1.1-2H1Z0FJPE28CgZNofHijuT
+                      half-0.2.2.3@half-0.2.2.3-GHJ372Ls7FBA3PAGtGHfOR
+                      integer-gmp-1.0.0.1 stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve
+                      text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         gloss-rendering-1.11.1.1@gloss-rendering-1.11.1.1-2H1Z0FJPE28CgZNofHijuT:Graphics.Gloss.Internals.Data.Picture
+         stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve:Control.Monad.STM
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Show
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi:Graphics.Gloss bf67b0e05def334587dfecab9a36e1dd
+import  -/  gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi:Graphics.Gloss.Data.Color 45da860083551187378f3db9bd1a5264
+import  -/  gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi:Graphics.Gloss.Data.Display a33b500bad61c732da0e1a5a8d7ca154
+import  -/  gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi:Graphics.Gloss.Data.Picture acb105bdd44e47e26ad5cc5612291d6f
+import  -/  gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi:Graphics.Gloss.Interface.Pure.Display a016f96fcfed5b8245a50e349672b436
+import  -/  gloss-rendering-1.11.1.1@gloss-rendering-1.11.1.1-2H1Z0FJPE28CgZNofHijuT:Graphics.Gloss.Internals.Data.Color f397894b78d6fbb7fafb076846e25498
+import  -/  gloss-rendering-1.11.1.1@gloss-rendering-1.11.1.1-2H1Z0FJPE28CgZNofHijuT:Graphics.Gloss.Internals.Data.Picture 06b134b12b86b8d47d5ac0ceff5d2f70
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+f064704050bfa2a1a2d30ab5e14b95b4
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+c2b9af609ffef4b2b8f0e8ccc86a8d7a
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (eta :: GHC.Prim.State#
+                             GHC.Prim.RealWorld)[OneShot] ->
+                 Graphics.Gloss.Internals.Interface.Display.displayWithBackend1
+                   @ Graphics.Gloss.Internals.Interface.Backend.GLUT.GLUTState
+                   Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState
+                   Graphics.Gloss.Internals.Interface.Backend.GLUT.glutStateInit
+                   Main.main5
+                   Graphics.Gloss.Data.Color.white
+                   Main.main2
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0]
+                             <Graphics.Gloss.Internals.Data.Picture.Picture>_R))
+                   Graphics.Gloss.Interface.Pure.Display.display2
+                     `cast`
+                   (<Graphics.Gloss.Data.Controller.Controller>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                   eta) -}
+97e52d66fc1336262e436024ec8b082b
+  main10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Nice Window"#) -}
+43636011238acf0cf4bfe98880506ebb
+  main11 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+024f47270ece6b6d0b9c3f4b4fa07b08
+  main2 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Graphics.Gloss.Internals.Data.Picture.Picture #)
+  {- Arity: 1, HasNoCafRefs,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s, Main.main3 #)) -}
+42552e9f0feafd78ad0c0fbb316c8495
+  main3 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- HasNoCafRefs,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Circle
+                   Main.main4) -}
+b677f31b188a915eb0301bec5107c8c8
+  main4 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 80.0#) -}
+92bf2ae92c237d2954486371bae36f18
+  main5 :: Graphics.Gloss.Data.Display.Display
+  {- Unfolding: (Graphics.Gloss.Data.Display.InWindow
+                   Main.main10
+                   Main.main8
+                   Main.main6) -}
+66dea6caf5b50d23e98563e476838986
+  main6 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Unfolding: ((Main.main7, Main.main7)) -}
+bb8cf39a58d9b1cc22823a9fb8766fd5
+  main7 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 10#) -}
+546c6ef655e78fdf5be10f8dc613d165
+  main8 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Unfolding: ((Main.main9, Main.main9)) -}
+62f66e3df99b784ed230a92d0c038ea0
+  main9 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 200#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
