@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-29 15:42:26.277185 UTC
+2017-12-04 15:40:17.111223 UTC
 
 interface main@main:Main 8002
-  interface hash: e49f75432cbea818865244004b7fb993
-  ABI hash: 7dac989175918b60810ff24e0776ab57
+  interface hash: f4d4083ade8cbcd9a33071860deb23a2
+  ABI hash: 3dd2a7e03bae9fde9b31f1633565fab1
   export-list hash: e3b89aa366de6a1166a6325b79d366cd
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 0cd4400c5901eb8e391e4a44d55987ce
@@ -53,15 +53,88 @@ family instance modules: base-4.9.1.0:Control.Applicative
                          containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
                          containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
                          text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
+import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi:Graphics.Gloss bf67b0e05def334587dfecab9a36e1dd
 import  -/  gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi:Graphics.Gloss.Data.Color 45da860083551187378f3db9bd1a5264
 import  -/  gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi:Graphics.Gloss.Data.Display a33b500bad61c732da0e1a5a8d7ca154
 import  -/  gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi:Graphics.Gloss.Data.Picture acb105bdd44e47e26ad5cc5612291d6f
-import  -/  gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi:Graphics.Gloss.Interface.Pure.Display a016f96fcfed5b8245a50e349672b436
+import  -/  gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi:Graphics.Gloss.Data.ViewPort f64776979ae45f409f1e1e1092fecbbb
+import  -/  gloss-1.11.1.1@gloss-1.11.1.1-8GzjbnWS46V6aZCKK1kaHi:Graphics.Gloss.Interface.Pure.Simulate 261bbc7a4f5847992e855b91ea7e91cf
 import  -/  gloss-rendering-1.11.1.1@gloss-rendering-1.11.1.1-2H1Z0FJPE28CgZNofHijuT:Graphics.Gloss.Internals.Data.Color f397894b78d6fbb7fafb076846e25498
 import  -/  gloss-rendering-1.11.1.1@gloss-rendering-1.11.1.1-2H1Z0FJPE28CgZNofHijuT:Graphics.Gloss.Internals.Data.Picture 06b134b12b86b8d47d5ac0ceff5d2f70
+7876d03c82c631244d3af854cb04893e
+  $fShowPongGame :: GHC.Show.Show Main.PongGame
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.PongGame
+                  Main.$fShowPongGame_$cshowsPrec
+                  Main.$fShowPongGame_$cshow
+                  Main.$fShowPongGame_$cshowList -}
+7876d03c82c631244d3af854cb04893e
+  $fShowPongGame1 :: Main.PongGame -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Main.PongGame) ->
+                 case w of ww { Main.Game ww1 ww2 ww3 ww4 ->
+                 Main.$w$cshowsPrec 0# ww1 ww2 ww3 ww4 }) -}
+7876d03c82c631244d3af854cb04893e
+  $fShowPongGame_$cshow :: Main.PongGame -> GHC.Base.String
+  {- Arity: 1,
+     Strictness: <S,1*U(U(U(U),U(U)),U(U(U),U(U)),1*U(U),1*U(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Main.PongGame) ->
+                 Main.$fShowPongGame_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+7876d03c82c631244d3af854cb04893e
+  $fShowPongGame_$cshowList :: [Main.PongGame] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Main.PongGame
+                   Main.$fShowPongGame1) -}
+7876d03c82c631244d3af854cb04893e
+  $fShowPongGame_$cshowsPrec ::
+    GHC.Types.Int -> Main.PongGame -> GHC.Show.ShowS
+  {- Arity: 2,
+     Strictness: <S(S),1*U(U)><S,1*U(U(U(U),U(U)),U(U(U),U(U)),1*U(U),1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Main.PongGame) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Main.Game ww3 ww4 ww5 ww6 ->
+                 Main.$w$cshowsPrec ww1 ww3 ww4 ww5 ww6 } }) -}
+4bc39e9741b618040e08de679f285b2d
+  $tc'Game :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4536656583985243897##
+                   12229724575624676726##
+                   Main.$trModule
+                   Main.$tc'Game1) -}
+53f07f1f7d87658196bd2ee6b919659d
+  $tc'Game1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Game"#) -}
+2076d8899f7ba21f04b81df6d9cab406
+  $tcPongGame :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16667677062937766488##
+                   5025074772596735273##
+                   Main.$trModule
+                   Main.$tcPongGame1) -}
+1a522fcdeba2291ce433ca9c488aa58a
+  $tcPongGame1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "PongGame"#) -}
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -74,78 +147,454 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-f064704050bfa2a1a2d30ab5e14b95b4
+4fdd99cd79ac7a3a02098022577cb633
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> (GHC.Types.Float, GHC.Types.Float)
+    -> (GHC.Types.Float, GHC.Types.Float)
+    -> GHC.Types.Float
+    -> GHC.Types.Float
+    -> GHC.Show.ShowS
+  {- Arity: 5,
+     Strictness: <S,U><L,U(U(U),U(U))><L,U(U(U),U(U))><L,1*U(U)><L,1*U(U)>,
+     Inline: [0] -}
+7876d03c82c631244d3af854cb04893e
+  data PongGame
+    = Game {ballLoc :: (GHC.Types.Float, GHC.Types.Float),
+            ballVel :: (GHC.Types.Float, GHC.Types.Float),
+            player1 :: GHC.Types.Float,
+            player2 :: GHC.Types.Float}
+9c18057061b8a47610c39b0a55e86cae
+  type Position = (GHC.Types.Float, GHC.Types.Float)
+ef599d3631095a025c90fc187752ef36
+  type Radius = GHC.Types.Float
+aa066c41c51ab8cdf4a25181c32a1697
+  ballLoc :: Main.PongGame -> (GHC.Types.Float, GHC.Types.Float)
+  RecSel Left Main.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLL),1*U(1*U(U,U),A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Main.PongGame) ->
+                 case ds of wild { Main.Game ds1 ds2 ds3 ds4 -> ds1 }) -}
+b52e8b26b255a9b2f31f2b6e92daf8cd
+  ballVel :: Main.PongGame -> (GHC.Types.Float, GHC.Types.Float)
+  RecSel Left Main.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLL),1*U(A,1*U(U,U),A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Main.PongGame) ->
+                 case ds of wild { Main.Game ds1 ds2 ds3 ds4 -> ds2 }) -}
+ef505ef2bd8ce77a3df8bac320d93229
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-c2b9af609ffef4b2b8f0e8ccc86a8d7a
+e00d7b33c01d8498684ae845c47b9441
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: (\ (eta :: GHC.Prim.State#
                              GHC.Prim.RealWorld)[OneShot] ->
-                 Graphics.Gloss.Internals.Interface.Display.displayWithBackend1
-                   @ Graphics.Gloss.Internals.Interface.Backend.GLUT.GLUTState
-                   Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState
-                   Graphics.Gloss.Internals.Interface.Backend.GLUT.glutStateInit
-                   Main.main5
-                   Graphics.Gloss.Data.Color.white
-                   Main.main2
-                     `cast`
-                   (Sym (GHC.Types.N:IO[0]
-                             <Graphics.Gloss.Internals.Data.Picture.Picture>_R))
-                   Graphics.Gloss.Interface.Pure.Display.display2
-                     `cast`
-                   (<Graphics.Gloss.Data.Controller.Controller>_R
-                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))
-                   eta) -}
-97e52d66fc1336262e436024ec8b082b
-  main10 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Nice Window"#) -}
-43636011238acf0cf4bfe98880506ebb
-  main11 ::
+                 case Graphics.Gloss.Internals.Interface.Simulate.simulateWithBackendIO1
+                        @ Main.PongGame
+                        @ Graphics.Gloss.Internals.Interface.Backend.GLUT.GLUTState
+                        Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState
+                        Graphics.Gloss.Internals.Interface.Backend.GLUT.glutStateInit
+                        Main.main46
+                        Graphics.Gloss.Data.Color.black
+                        Main.main45
+                        Main.main36
+                        Main.main3
+                          `cast`
+                        (<Main.PongGame>_R
+                         ->_R Sym (GHC.Types.N:IO[0]
+                                       <Graphics.Gloss.Internals.Data.Picture.Picture>_R))
+                        Main.main2
+                          `cast`
+                        (<Graphics.Gloss.Data.ViewPort.ViewPort>_R
+                         ->_R <GHC.Types.Float>_R
+                         ->_R <Main.PongGame>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <Main.PongGame>_R))
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, GHC.Tuple.() #) }) -}
+9792f092a233acd7b6ea2dacedf57fa1
+  main10 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m10,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Main.main15
+                   Main.main11) -}
+9eb1991dd2e00765eff77ce3429c742e
+  main11 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m2,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Polygon
+                   Main.main12) -}
+188212872b28f8885a492170ad7d2f56
+  main12 :: Graphics.Gloss.Internals.Data.Picture.Path
+  {- Unfolding: (case Graphics.Gloss.Data.Picture.$wrectanglePath
+                        Main.main14
+                        Main.main13 of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Point
+                   ww1
+                   ww2 }) -}
+7516fc601f3612ae2e725bf50926e3d6
+  main13 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 80.0#) -}
+94867af328b1939ca9d6293b0e0fc0cb
+  main14 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 20.0#) -}
+5fe82065ab2545ecec9d7a31a493fcef
+  main15 :: Graphics.Gloss.Internals.Data.Color.Color
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Graphics.Gloss.Internals.Data.Color.RGBA
+                   0.4#
+                   0.4#
+                   1.0#
+                   1.0#) -}
+50aac438cc2fee271ef4a5118cae6ea8
+  main16 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Graphics.Gloss.Data.Color.rose
+                   Main.main5) -}
+38067569f7bca19d576b4d4475bb25fa
+  main17 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 120.0#) -}
+742ed8b8c563f3ce9b5d14a307dbbf81
+  main18 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m14,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Pictures
+                   Main.main19) -}
+f36d2d8016deaf90f0dcc653a45517fe
+  main19 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Picture
+                   Main.main30
+                   Main.main20) -}
+85c10117f8ffef7b079eeb0a14254b27
+  main2 ::
+    Graphics.Gloss.Data.ViewPort.ViewPort
+    -> GHC.Types.Float
+    -> Main.PongGame
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.PongGame #)
+  {- Arity: 4, HasNoCafRefs,
+     Unfolding: (\ (view :: Graphics.Gloss.Data.ViewPort.ViewPort)
+                   (time :: GHC.Types.Float)[OneShot]
+                   (model1 :: Main.PongGame)[OneShot]
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s,
+                    case model1 of wild { Main.Game ds ds1 ds2 ds3 ->
+                    let {
+                      ds4 :: GHC.Types.Float
+                      = case ds of wild1 { (,) x y ->
+                        case y of wild2 { GHC.Types.F# x1 ->
+                        case ds1 of wild3 { (,) vx vy ->
+                        case vy of wild4 { GHC.Types.F# x2 ->
+                        case time of wild5 { GHC.Types.F# y1 ->
+                        GHC.Types.F#
+                          (GHC.Prim.plusFloat# x1 (GHC.Prim.timesFloat# x2 y1)) } } } } }
+                    } in
+                    Main.Game
+                      (case ds of wild1 { (,) x y ->
+                       case x of wild2 { GHC.Types.F# x1 ->
+                       case ds1 of wild3 { (,) vx vy ->
+                       case vx of wild4 { GHC.Types.F# x2 ->
+                       case time of wild5 { GHC.Types.F# y1 ->
+                       GHC.Types.F#
+                         (GHC.Prim.plusFloat# x1 (GHC.Prim.timesFloat# x2 y1)) } } } } },
+                       ds4)
+                      (case ds1 of wild1 { (,) vx vy -> vx },
+                       case ds4 of wild1 { GHC.Types.F# x ->
+                       case GHC.Prim.tagToEnum#
+                              @ GHC.Types.Bool
+                              (GHC.Prim.leFloat#
+                                 (GHC.Prim.minusFloat# x 10.0#)
+                                 -150.0#) of wild2 {
+                         GHC.Types.False
+                         -> case GHC.Prim.tagToEnum#
+                                   @ GHC.Types.Bool
+                                   (GHC.Prim.geFloat#
+                                      (GHC.Prim.plusFloat# x 10.0#)
+                                      150.0#) of wild3 {
+                              GHC.Types.False -> case ds1 of wild4 { (,) vx vy -> vy }
+                              GHC.Types.True
+                              -> case ds1 of wild4 { (,) vx vy ->
+                                 case vy of wild5 { GHC.Types.F# x1 ->
+                                 GHC.Types.F# (GHC.Prim.negateFloat# x1) } } }
+                         GHC.Types.True
+                         -> case ds1 of wild3 { (,) vx vy ->
+                            case vy of wild4 { GHC.Types.F# x1 ->
+                            GHC.Types.F# (GHC.Prim.negateFloat# x1) } } } })
+                      ds2
+                      ds3 } #)) -}
+07c87c33a243e1fabf9f863d22ef3bcd
+  main20 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Picture
+                   Main.main21
+                   (GHC.Types.[] @ Graphics.Gloss.Internals.Data.Picture.Picture)) -}
+e5caf608a8c49aef1942ce95102295b0
+  main21 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m11,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Translate
+                   Main.main29
+                   Main.main28
+                   Main.main22) -}
+d13a4a674dfb2a3659f2184983b3e053
+  main22 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m10,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Main.main27
+                   Main.main23) -}
+e557d1e88499cb6805992319c3d63f88
+  main23 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m2,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Polygon
+                   Main.main24) -}
+e38687de82f778562959aa0da9eb7baf
+  main24 :: Graphics.Gloss.Internals.Data.Picture.Path
+  {- Unfolding: (case Graphics.Gloss.Data.Picture.$wrectanglePath
+                        Main.main26
+                        Main.main25 of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Point
+                   ww1
+                   ww2 }) -}
+ed62a81c83cde6c1dd851841b55cc14b
+  main25 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 10.0#) -}
+be78d1a2244fff2374a0f6e5fb1fa3a2
+  main26 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 270.0#) -}
+096b813b85acecedc07fafcea880767b
+  main27 :: Graphics.Gloss.Internals.Data.Color.Color
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Graphics.Gloss.Internals.Data.Color.RGBA
+                   0.5#
+                   0.5#
+                   0.5#
+                   1.0#) -}
+ae2ac1c956d09c691f8c2e9264497a12
+  main28 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -150.0#) -}
+3feac438f96f2464bea2df886b92eb42
+  main29 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.0#) -}
+ee71ffd6c9021952662f1e13f996c9e6
+  main3 ::
+    Main.PongGame
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Graphics.Gloss.Internals.Data.Picture.Picture #)
+  {- Arity: 2,
+     Unfolding: (\ (x :: Main.PongGame)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s,
+                    Graphics.Gloss.Internals.Data.Picture.Pictures
+                      (GHC.Types.:
+                         @ Graphics.Gloss.Internals.Data.Picture.Picture
+                         (let {
+                            p :: (GHC.Types.Float, GHC.Types.Float)
+                            = case x of wild { Main.Game ds ds1 ds2 ds3 -> ds }
+                          } in
+                          Graphics.Gloss.Internals.Data.Picture.Translate
+                            (case p of wild { (,) x1 ds -> x1 })
+                            (case p of wild { (,) ds y -> y })
+                            Main.main32)
+                         (GHC.Types.:
+                            @ Graphics.Gloss.Internals.Data.Picture.Picture
+                            Main.main18
+                            (GHC.Types.:
+                               @ Graphics.Gloss.Internals.Data.Picture.Picture
+                               (let {
+                                  y :: GHC.Types.Float
+                                  = case x of wild { Main.Game ds ds1 ds2 ds3 -> ds2 }
+                                } in
+                                Graphics.Gloss.Internals.Data.Picture.Pictures
+                                  (GHC.Types.:
+                                     @ Graphics.Gloss.Internals.Data.Picture.Picture
+                                     (Graphics.Gloss.Internals.Data.Picture.Translate
+                                        Main.main17
+                                        y
+                                        Main.main16)
+                                     (GHC.Types.:
+                                        @ Graphics.Gloss.Internals.Data.Picture.Picture
+                                        (Graphics.Gloss.Internals.Data.Picture.Translate
+                                           Main.main17
+                                           y
+                                           Main.main10)
+                                        (GHC.Types.[]
+                                           @ Graphics.Gloss.Internals.Data.Picture.Picture))))
+                               (GHC.Types.:
+                                  @ Graphics.Gloss.Internals.Data.Picture.Picture
+                                  (let {
+                                     y :: GHC.Types.Float
+                                     = case x of wild { Main.Game ds ds1 ds2 ds3 -> ds3 }
+                                   } in
+                                   Graphics.Gloss.Internals.Data.Picture.Pictures
+                                     (GHC.Types.:
+                                        @ Graphics.Gloss.Internals.Data.Picture.Picture
+                                        (Graphics.Gloss.Internals.Data.Picture.Translate
+                                           Main.main9
+                                           y
+                                           Main.main4)
+                                        (GHC.Types.:
+                                           @ Graphics.Gloss.Internals.Data.Picture.Picture
+                                           (Graphics.Gloss.Internals.Data.Picture.Translate
+                                              Main.main9
+                                              y
+                                              Main.main10)
+                                           (GHC.Types.[]
+                                              @ Graphics.Gloss.Internals.Data.Picture.Picture))))
+                                  (GHC.Types.[]
+                                     @ Graphics.Gloss.Internals.Data.Picture.Picture))))) #)) -}
+34a42506ecd71ea2bb12209045184bf5
+  main30 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m11,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Translate
+                   Main.main29
+                   Main.main31
+                   Main.main22) -}
+ad88f976b02824949dfd2a2335ec294f
+  main31 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 150.0#) -}
+c99ebcd621e2899e3f519bb588e528ed
+  main32 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- HasNoCafRefs, Strictness: m10,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Main.main35
+                   Main.main33) -}
+7d5709700819f6ded90035ad5f60b26e
+  main33 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- HasNoCafRefs, Strictness: m5,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.ThickCircle
+                   Main.main34
+                   Main.main25) -}
+2351077969a812badb43dec55cb51d5d
+  main34 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 5.0#) -}
+97cbde7c7b5fc3ccb2b1aac1569a8eb0
+  main35 :: Graphics.Gloss.Internals.Data.Color.Color
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Graphics.Gloss.Internals.Data.Color.RGBA
+                   0.8#
+                   -0.2#
+                   -0.2#
+                   1.0#) -}
+9afaf98e8104d54e18d72f946744c6f2
+  main36 :: Main.PongGame
+  {- HasNoCafRefs,
+     Unfolding: (Main.Game
+                   Main.main42
+                   Main.main39
+                   Main.main38
+                   Main.main37) -}
+7df0332b17ec8d3ff2b9692516e939f3
+  main37 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# -80.0#) -}
+fc4e53bcf57a652bcfcbe672ddce9c6d
+  main38 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 40.0#) -}
+95fac323cc1b6db663f719a116a19106
+  main39 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Unfolding: ((Main.main41, Main.main40)) -}
+4445420c72639056e177677272965d87
+  main4 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Graphics.Gloss.Data.Color.orange
+                   Main.main5) -}
+0d70fbeec32d2e4e27b6ef2714993b68
+  main40 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# -3.0#) -}
+dbecf1fe79ba3009b52158266781e394
+  main41 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 1.0#) -}
+6f25fa6462bc17fd432c2575cef33ee5
+  main42 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Unfolding: ((Main.main44, Main.main43)) -}
+91e6b2bf086d45283d29ca9ed6c1eecb
+  main43 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 30.0#) -}
+44c3b95c79114fe391011317b7f1304b
+  main44 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# -10.0#) -}
+d00678330c3fd9952a3d96896098e024
+  main45 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 60#) -}
+97436ea3b05793ba9968da812f983f3f
+  main46 :: Graphics.Gloss.Data.Display.Display
+  {- Unfolding: (Graphics.Gloss.Data.Display.InWindow
+                   Main.main50
+                   Main.main48
+                   Main.main47) -}
+db8475130603698f27206f8c29343426
+  main47 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Unfolding: ((Main.offset, Main.offset)) -}
+7c7ac3218480f4efc7ba47548d4d663a
+  main48 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Unfolding: ((Main.main49, Main.main49)) -}
+f6ea4b655e923922c5ef47e0de0ccb5b
+  main49 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 300#) -}
+2ae226af06756a56fc85075bfb376b03
+  main5 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m2,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Polygon
+                   Main.main6) -}
+192b2119b939eeed6bb1c30b1e8cc7d4
+  main50 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Pong"#) -}
+785fb1ccaad9f375b5b205dcc2fe5ac1
+  main51 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-024f47270ece6b6d0b9c3f4b4fa07b08
-  main2 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
-          Graphics.Gloss.Internals.Data.Picture.Picture #)
+9a17bbdf273477051799272de12175d1
+  main6 :: Graphics.Gloss.Internals.Data.Picture.Path
+  {- Unfolding: (case Graphics.Gloss.Data.Picture.$wrectanglePath
+                        Main.main8
+                        Main.main7 of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Point
+                   ww1
+                   ww2 }) -}
+4ae4118aabb88ebbcab3c30b5665f27f
+  main7 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 86.0#) -}
+3f803b8402620da14c817eff79ed21ca
+  main8 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 26.0#) -}
+83b59a93559e356d160c0e1b02f02d50
+  main9 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -120.0#) -}
+fe63330dae3b074c4cf48d129b94eb72
+  offset :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 100#) -}
+208a88d9a1a5a4dc4dd3cef8d4e62fd8
+  player1 :: Main.PongGame -> GHC.Types.Float
+  RecSel Left Main.PongGame
   {- Arity: 1, HasNoCafRefs,
-     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 (# s, Main.main3 #)) -}
-42552e9f0feafd78ad0c0fbb316c8495
-  main3 :: Graphics.Gloss.Internals.Data.Picture.Picture
-  {- HasNoCafRefs,
-     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Circle
-                   Main.main4) -}
-b677f31b188a915eb0301bec5107c8c8
-  main4 :: GHC.Types.Float
-  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 80.0#) -}
-92bf2ae92c237d2954486371bae36f18
-  main5 :: Graphics.Gloss.Data.Display.Display
-  {- Unfolding: (Graphics.Gloss.Data.Display.InWindow
-                   Main.main10
-                   Main.main8
-                   Main.main6) -}
-66dea6caf5b50d23e98563e476838986
-  main6 :: (GHC.Types.Int, GHC.Types.Int)
-  {- HasNoCafRefs, Unfolding: ((Main.main7, Main.main7)) -}
-bb8cf39a58d9b1cc22823a9fb8766fd5
-  main7 :: GHC.Types.Int
-  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 10#) -}
-546c6ef655e78fdf5be10f8dc613d165
-  main8 :: (GHC.Types.Int, GHC.Types.Int)
-  {- HasNoCafRefs, Unfolding: ((Main.main9, Main.main9)) -}
-62f66e3df99b784ed230a92d0c038ea0
-  main9 :: GHC.Types.Int
-  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 200#) -}
+     Strictness: <S(LLSL),1*U(A,A,1*U(U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Main.PongGame) ->
+                 case ds of wild { Main.Game ds1 ds2 ds3 ds4 -> ds3 }) -}
+3162b1370556b613e40d1d6cb6500575
+  player2 :: Main.PongGame -> GHC.Types.Float
+  RecSel Left Main.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLS),1*U(A,A,A,1*U(U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Main.PongGame) ->
+                 case ds of wild { Main.Game ds1 ds2 ds3 ds4 -> ds4 }) -}
+instance GHC.Show.Show [Main.PongGame] = Main.$fShowPongGame
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
