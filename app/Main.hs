@@ -1,8 +1,8 @@
--- | code from: andrew.gibiansky.com/blog/haskell/haskell-gloss/
 module Main(main) where
 
 import Graphics.Gloss
 import Graphics.Gloss.Data.ViewPort
+import Graphics.Gloss.Interface.Pure.Game
 
 data PongGame = Game 
     { ballLoc :: (Float, Float) -- ^ (x, y) location
@@ -12,19 +12,40 @@ data PongGame = Game
     , player2 :: Float          -- ^ Right player paddle height
     } deriving Show 
 
-width, height, offset, paddleHeight, paddleR, paddleL :: Int
+width, height, offset :: Int
 width = 300
 height = 300
 offset = 100
-paddleHeight = 80
+
+paddleL, paddleR, paddleH :: Float
+paddleH = 80
 paddleR = 120
 paddleL = (-120)
+paddleW = 20
 
 fps :: Int
 fps = 60
 
 type Radius = Float
 type Position = (Float, Float)
+
+-- | Respond to key events
+handleKeys :: Event -> PongGame -> PongGame
+-- For an 's' keypress, reset hte ball to the center
+handleKeys (EventKey (Char 's') _ _ _) game =
+    game { ballLoc = (0, 0) }
+-- Player 2 controls
+handleKeys (EventKey (Char 'q') _ _ _) game =
+    game { player2 = (player2 game) + 5 }
+handleKeys (EventKey (Char 'a') _ _ _) game =
+    game { player2 = (player2 game) - 5 }
+-- Player 1 controls
+handleKeys (EventKey (SpecialKey KeyUp) _ _ _) game =
+    game { player1 = (player1 game) + 5 }
+handleKeys (EventKey (SpecialKey KeyDown) _ _ _) game =
+    game { player1 = (player1 game) - 5 }
+-- Do nothing for all other evets
+handleKeys _ game = game
 
 -- | Given position and radius of the ball, return whether a collision occured
 wallCollision :: Position -> Radius -> Bool
@@ -36,15 +57,17 @@ wallCollision (_, y) radius = topCollision || bottomCollision
 paddleCollision :: PongGame -> Position -> Radius -> Bool
 paddleCollision game (x, y) radius = leftPaddleCol || rightPaddleCol
     where
-        leftPaddleCol = (x <= fromIntegral paddleL) 
-                        && (y >= (player1 game) && y >= (player1 game) + fromIntegral paddleHeight)
-        rightPaddleCol = (x <= fromIntegral paddleL) 
-                        && (y >= (player2 game) && y >= (player2 game) + fromIntegral paddleHeight)
+        leftPaddleCol  = (x - radius <= paddleL + (paddleW / 2))
+                         && (y <= (player2 game) + (paddleH / 2) 
+                            && y >= (player2 game) - (paddleH / 2))
+        rightPaddleCol = (x + radius >= paddleR - (paddleW / 2)) 
+                         && (y <= (player1 game) + (paddleH / 2)
+                            && y >= (player1 game) - (paddleH / 2))
                                            
 -- | Detect a collision with a paddle. Upon collisions,
 -- change the velocity of the ball to bounce it off the paddle
 paddleBounce :: PongGame -> PongGame
-paddleBounce game = game { ballVel = (vx, vy') }
+paddleBounce game = game { ballVel = (vx', vy) }
     where
         -- Radius
         radius = 10
@@ -52,13 +75,13 @@ paddleBounce game = game { ballVel = (vx, vy') }
         -- Old velocites
         (vx, vy) = ballVel game
 
-        vy' = if paddleCollision game (ballLoc game) radius 
+        vx' = if paddleCollision game (ballLoc game) radius 
                 then
                     -- Update velocity
-                    -vy
+                    -vx
                     else
                     -- Do nothing
-                        vy
+                        vx
                     
 
 -- Detect a collision with one of the side walls. Upon collisions,
@@ -98,8 +121,8 @@ render :: PongGame -- ^ Game state
        -> Picture -- ^ Picture to render
 render game =
     pictures [ball, walls,
-                mkPaddle rose 120 $ player1 game,
-                mkPaddle orange (-120) $ player2 game]
+                mkPaddle rose paddleR $ player1 game,
+                mkPaddle orange (paddleL) $ player2 game]
     where
         -- The pong ball
         ball = uncurry translate (ballLoc game) 
@@ -120,7 +143,7 @@ render game =
         mkPaddle :: Color -> Float -> Float -> Picture
         mkPaddle col x y = pictures
             [ translate x y $ color col $ rectangleSolid 26 86
-            , translate x y $ color paddleColor $ rectangleSolid 20 80
+            , translate x y $ color paddleColor $ rectangleSolid paddleW paddleH 
             ]
 
         paddleColor = light (light blue)
@@ -128,7 +151,7 @@ render game =
 initialState :: PongGame
 initialState = Game
     { ballLoc = (-10, 30)
-    , ballVel = (1, -3)
+    , ballVel = (30, 3)
     , player1 = 40
     , player2 = -80
     }
@@ -141,8 +164,8 @@ background = black
 
 -- | Update the game by moving the ball
 -- Ignore the ViewPort argument
-update :: ViewPort -> Float -> PongGame -> PongGame
-update _ seconds = wallBounce . moveBall seconds
+update :: Float -> PongGame -> PongGame
+update seconds = paddleBounce . wallBounce . moveBall seconds
 
 main :: IO ()
-main = simulate window background fps initialState render update
+main = print "Welcome to Pong" <* play window background fps initialState render handleKeys update
