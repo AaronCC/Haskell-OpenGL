@@ -10,6 +10,8 @@ data PongGame = Game
     , player1 :: Float          -- ^ Left player paddle height
                                 -- 0 is center of screen
     , player2 :: Float          -- ^ Right player paddle height
+    , player1Keys :: PKeyState
+    , player2Keys :: PKeyState
     } deriving Show 
 
 width, height, offset :: Int
@@ -26,6 +28,7 @@ paddleW = 20
 fps :: Int
 fps = 60
 
+type PKeyState = (Bool, Bool)
 type Radius = Float
 type Position = (Float, Float)
 
@@ -35,15 +38,23 @@ handleKeys :: Event -> PongGame -> PongGame
 handleKeys (EventKey (Char 's') _ _ _) game =
     game { ballLoc = (0, 0) }
 -- Player 2 controls
-handleKeys (EventKey (Char 'q') _ _ _) game =
-    game { player2 = (player2 game) + 5 }
-handleKeys (EventKey (Char 'a') _ _ _) game =
-    game { player2 = (player2 game) - 5 }
+handleKeys (EventKey (Char 'q') Down _ _) game =
+    game { player2Keys = (True, False) }
+handleKeys (EventKey (Char 'a') Down _ _) game =
+    game { player2Keys = (False, True) }
+handleKeys (EventKey (Char 'q') Up _ _) game =
+    game { player2Keys = (False, False) }
+handleKeys (EventKey (Char 'a') Up _ _) game =
+    game { player2Keys = (False, False) }
 -- Player 1 controls
-handleKeys (EventKey (SpecialKey KeyUp) _ _ _) game =
-    game { player1 = (player1 game) + 5 }
-handleKeys (EventKey (SpecialKey KeyDown) _ _ _) game =
-    game { player1 = (player1 game) - 5 }
+handleKeys (EventKey (SpecialKey KeyUp) Down _ _) game =
+    game { player1Keys = (True, False) }
+handleKeys (EventKey (SpecialKey KeyDown) Down _ _) game =
+    game { player1Keys = (False, True) }
+handleKeys (EventKey (SpecialKey KeyUp) Up _ _) game =
+    game { player1Keys = (False, False) }
+handleKeys (EventKey (SpecialKey KeyDown) Up _ _) game =
+    game { player1Keys = (False, False) }
 -- Do nothing for all other evets
 handleKeys _ game = game
 
@@ -151,9 +162,11 @@ render game =
 initialState :: PongGame
 initialState = Game
     { ballLoc = (-10, 30)
-    , ballVel = (30, 3)
+    , ballVel = (60, 3)
     , player1 = 40
     , player2 = -80
+    , player1Keys = (False, False)
+    , player2Keys = (False, False)
     }
 
 window :: Display
@@ -162,10 +175,33 @@ window = InWindow "Pong" (width, height) (offset, offset)
 background :: Color
 background = black
 
+-- | Check if a player has won
+checkWin :: PongGame -> Bool 
+checkWin game = case p1 of True -> error "Player 2 Wins"
+                           False -> case p2 of True -> error "Player 1 Wins"
+                                               False -> False
+    where
+        (x, y) = ballLoc game
+        p1 = (x <= (fromIntegral width / 2) * (-1))
+        p2 = (x >= fromIntegral width / 2)
+
+movePaddles :: PongGame -> PongGame
+movePaddles game = game { player1 = move1, player2 = move2 }
+    where
+        (p1u, p1d) = (player1Keys game)
+        (p2u, p2d) = (player2Keys game)
+        move1 = case p1u of True  -> (player1 game) + 1
+                            False -> case p1d of True  -> (player1 game) - 1
+                                                 False -> (player1 game)
+        move2 = case p2u of True  -> (player2 game) + 1
+                            False -> case p2d of True  -> (player2 game) - 1
+                                                 False -> (player2 game)
+
 -- | Update the game by moving the ball
 -- Ignore the ViewPort argument
 update :: Float -> PongGame -> PongGame
-update seconds = paddleBounce . wallBounce . moveBall seconds
+update seconds game = case checkWin game of False -> paddleBounce . movePaddles .  wallBounce $ moveBall seconds game
+                                            True  -> game
 
 main :: IO ()
 main = print "Welcome to Pong" <* play window background fps initialState render handleKeys update
